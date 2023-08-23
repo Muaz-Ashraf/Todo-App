@@ -31,7 +31,12 @@ const Todo = ({ title, completed, id }) => {
             onChange={handleChange}
             inputProps={{ "aria-label": "controlled" }}
           />
-          <Typography fontWeight={"bold"}>{title}</Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{ color: completed ? "lightgray" : "black" }}
+          >
+            {completed ? <s>title</s> : title}
+          </Typography>
         </Stack>
         <Typography>{completed ? "Completed" : "Yet to do"}</Typography>
       </Stack>
